@@ -14,7 +14,7 @@ Quick and easy way to create stubs.
 3. Insert your dummy response like :<br>
     ```
     db.Response.insert({
-     url: '/docment',
+     url: '/document',
      method: 'GET',
      response: {'message': 'OK'}
 })
