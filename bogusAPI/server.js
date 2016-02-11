@@ -3,17 +3,11 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
-
 // including routes 
 var routes = require('./app/routes');
 
-
 // calling express() to create an app object
 var app = express();
-
-
-
-
 
 // set our port
 var port = process.env.PORT || 8080;
