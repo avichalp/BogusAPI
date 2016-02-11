@@ -4,7 +4,8 @@ const MongoClient = require('mongodb');
 function routes (app){
     var mongoClient = Promise.promisifyAll(MongoClient).MongoClient;
     var responseGenerator = function (req, res) {
-	mongoClient.connectAsync('mongodb://localhost:27017/mean-dev')
+	dbEndpoint = process.env.MONGOLAB_URI || process.env.MONGO_LOCAL_URI
+	mongoClient.connectAsync(dbEndpoint)
 	    .then(function(db) {
 		return db.collection('Response').findAsync({
 		    url: req.url,
@@ -20,7 +21,7 @@ function routes (app){
 		}else{
 		    res.status(404).json({message: 'not found'});
 		}
-		
+
 	    })
 	    .catch(function(err) {
 		throw err;
