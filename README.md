@@ -11,7 +11,8 @@ Quick and easy way to create stubs.
 
 1. Create a database by the name of `dev`
 2. Create a collection called `Response`
-3. Insert your dummy response like :<br>
+3. set environment variable by issuing following command <br>`export MONGO_LOCAL_URI=<your mongo url>` for exmaple:<br> `export MONGO_LOCAL_URI=mongodb://localhost:27017/dev`
+4. Insert your dummy response like :<br>
     ```
     db.Response.insert({
      url: '/document',
@@ -22,7 +23,7 @@ Quick and easy way to create stubs.
   
 #### Using Stub
 
-Hit `localhost:8080`/document
+Hit `localhost:8080/document`
 Response that you should get :<br> `{'message': 'OK'}` 
   
-Crete any number of stubs by simply inserting approriate data in MongoDB
+Create any number of stubs by simply inserting approriate data in MongoDB
